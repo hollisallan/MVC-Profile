@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Testing Scenario</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script>        
+        $(document).ready(function () {
+            $("button").click(function () {
+                jQuery.ajaxSettings.traditional = true;
+                $.get("http://localhost:57559/api/CoFind/?VendorName=AMI&DunsNbr=%20&AccountName=%20&AccountNbr=%20&VendorRoleNbr=2&IncludeDisabled=False", function (data, status) {
+                    alert("Data: " + data.RetVal + "\nStatus: " + status);
+                });
+            });
+        });
+    </script>
+</head>
+<body>
+
+    <button>Send an HTTP GET request to a page and get the result back</button>
+
+</body>
+</html>
